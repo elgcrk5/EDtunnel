@@ -49,7 +49,7 @@ export default {
 							},
 						});
 					}
-					case `/${userID_Path}`: {
+					case `/vless`: {
 						const วเลสConfig = getวเลสConfig(userID, request.headers.get('Host'));
 						return new Response(`${วเลสConfig}`, {
 							status: 200,
