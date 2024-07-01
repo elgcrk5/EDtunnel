@@ -725,7 +725,7 @@ ${วเลสSec}
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 	// Prepare header string
 	const header = `
-<b style='font-size: 15px;'>ㄒ乇ㄥ乇Ꮆ尺卂爪 http://t.me/eruoone:</b>
+<b style='font-size: 15px;'>ㄒ乇ㄥ乇Ꮆ尺卂爪 http://t.me/eruoone:</b>;
 
 	// HTML Head with CSS and FontAwesome library
 	const htmlHead = `
