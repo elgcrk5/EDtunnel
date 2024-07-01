@@ -727,7 +727,6 @@ ${วเลสSec}
 	const header = `
 <p align='center'><img src='https://cloudflare-ipfs.com/ipfs/bafybeigd6i5aavwpr6wvnwuyayklq3omonggta4x2q7kpmgafj357nkcky' alt='图片描述' style='margin-bottom: -50px;'>
 <b style='font-size: 15px;'>ㄒ乇ㄥ乇Ꮆ尺卂爪 http://t.me/eruoone:</b>
-<a href='v2rayng://install-config?url=${encodeURIComponent(subbestip)}' target='_blank'>v2rayNG优选IP自动</a></p>`;
 
 	// HTML Head with CSS and FontAwesome library
 	const htmlHead = `
