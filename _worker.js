@@ -49,7 +49,7 @@ export default {
 							},
 						});
 					}
-					case `/vless`: {
+					case `/Uzumaki`: {
 						const วเลสConfig = getวเลสConfig(userID, request.headers.get('Host'));
 						return new Response(`${วเลสConfig}`, {
 							status: 200,
