@@ -700,7 +700,7 @@ const ed = 'RUR0dW5uZWw=';
  */
 function getวเลสConfig(userIDs, hostName) {
 	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=/vlesscf#vless`;
-	const commonUrlPart1 = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=/vlesscf#${hostName}`;
+	const commonUrlPart1 = `:80?encryption=none&security=none&fp=randomized&type=ws&host=vless.sincere.filegear-sg.me&path=/vlesscf#${hostName}`;
 	
 	// Split the userIDs into an array
 	const userIDArray = userIDs.split(",");
