@@ -716,6 +716,7 @@ function getวเลสConfig(userIDs, hostName) {
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
+» ISP         : OVH SAS
 » User ID     : ${userID}
 » Port TLS    : 443
 » Port NTLS   : 80
@@ -723,12 +724,12 @@ function getวเลสConfig(userIDs, hostName) {
 » Network     : (WS)
 » Path        : /vless
 =====================================
-<b>           🇮🇩 VLESS TLS 🇮🇩</b>
+<b>           🇸🇬 VLESS TLS 🇸🇬</b>
 =====================================
 ${วเลสMain}
  <button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless TLS</button>
 =====================================
-<b>         🇮🇩 VLESS NONE TLS 🇮🇩</b>
+<b>         🇸🇬 VLESS NONE TLS 🇸🇬</b>
 =====================================
 ${วเลสSec}
  <button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless NTLS</button>
@@ -742,7 +743,7 @@ ${วเลสSec}
 
 <body>
 <center>
-<img src="tidak ada" style="width: 50%"><br><font color="blue"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="blue"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
 </body>
@@ -935,5 +936,5 @@ function สร้างวเลสSub(ไอดีผู้ใช้_เส้
 }
 
 const cn_hostnames = [
-	'geotunnel.biz.id',
+	't.me/eruoone',
 	];
