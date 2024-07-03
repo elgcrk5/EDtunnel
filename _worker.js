@@ -742,7 +742,7 @@ ${วเลสSec}
 
 <body>
 <center>
-<img src="https://user-images.githubusercontent.com/96859296/185836662-688203b5-a267-4878-99d5-5ad048345d1d.jpg" style="width: 50%"><br><font color="green"><h1><b>GEO PROJECT</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
+<img src="https://ibb.co.com/jMss44m" style="width: 50%"><br><font color="green"><h1><b>VLESS PROJECT</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
 </body>
@@ -759,16 +759,16 @@ ${วเลสSec}
 	// HTML Head with CSS and FontAwesome library
 	const htmlHead = `
   <head>
-	<title>GEO PROJECT</title>
+	<title>VLES PROJECT</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<meta property='og:site_name' content='GEO: วเลส configuration' />
+	<meta property='og:site_name' content='VLESS: วเลส configuration' />
 	<meta property='og:type' content='website' />
-	<meta property='og:title' content='GEO - Bismillah' />
+	<meta property='og:title' content='VLESS - Bismillah' />
 	<meta property='og:description' content='Use cloudflare pages and worker severless to implement วเลส protocol' />
 	<meta property='og:url' content='https://${hostName}/' />
 	<meta property='og:image' content='https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${encodeURIComponent(`วเลส://${userIDs.split(",")[0]}@${hostName}${commonUrlPart}`)}' />
 	<meta name='twitter:card' content='summary_large_image' />
-	<meta name='twitter:title' content='GEO - วเลส configuration and subscribe output' />
+	<meta name='twitter:title' content='VLESS - วเลส configuration and subscribe output' />
 	<meta name='twitter:description' content='Use cloudflare pages and worker severless to implement วเลส protocol' />
 	<meta name='twitter:url' content='https://${hostName}/' />
 	<meta property='og:image:width' content='1500' />
