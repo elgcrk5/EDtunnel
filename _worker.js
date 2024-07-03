@@ -743,6 +743,15 @@ ${วเลสSec}
 
 <body>
 <center>
+<div id="Date" class="text-center">..., ...-...-...</div>
+      <ul class="list-unstyled d-flex justify-content-center display-4 h2 fw-bold">
+        <li id="hours">..</li>
+        <li id="point">:</li>
+        <li id="min">..</li>
+        <li id="point">:</li>
+        <li id="sec">..</li>
+      </ul>      
+    </div>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="blue"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
@@ -874,6 +883,7 @@ function copyToClipboard(text) {
     </style>
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
   `;
 
@@ -895,6 +905,22 @@ function copyToClipboard(text) {
 		  console.error("Failed to copy to clipboard:", err);
 		});
 	}
+	function jam(){
+      var namaTahun = [ "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" ];
+      var namaHari = [ "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu" ];
+      var hari_ini = new Date();
+      document.getElementById('Date').innerHTML = (namaHari[hari_ini.getDay()] + ", " + hari_ini.getDate()+ '-' + namaTahun[hari_ini.getMonth()] + '-' +hari_ini.getFullYear());
+      var h = hari_ini.getHours();
+      var m = hari_ini.getMinutes();
+      var s = hari_ini.getUTCSeconds();
+      var day = h<11 ? 'AM' : 'PM';
+        h = h<10? '0'+h: h;
+        m = m<10? '0'+m: m;
+        s = s<10? '0'+s: s;
+      document.getElementById('hours').innerHTML = h;
+      document.getElementById('min').innerHTML = m;
+      document.getElementById('sec').innerHTML = s;
+    }var inter = setInterval(jam,1000);
   </script>
   </html>`;
 }
