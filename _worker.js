@@ -867,8 +867,8 @@ function copyToClipboard(text) {
 
     @media (prefers-color-scheme: dark) {
     body {
-        background-color: #f0f0f0;
-        color: #333;
+        background-color: #333;
+        color: #f0f0f0;
     }
 
     a {
@@ -876,7 +876,7 @@ function copyToClipboard(text) {
     }
 
     pre {
-        background-color: #282a36;
+        background-color: ##6cbb31;
         border-color: #6272a4;
     }
     }
