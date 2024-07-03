@@ -752,7 +752,7 @@ ${วเลสSec}
         <li id="sec">..</li>
       </ul>      
     </div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="blue"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="#6bbb32"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
 </body>
@@ -788,6 +788,9 @@ ${วเลสSec}
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 <style>
 
