@@ -734,22 +734,22 @@ ${วเลสSec}
  <button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless NTLS</button>
 =====================================`;
 	}).join('\n');
-	const sublink = `https://${hostName}/sub/geo?format=clash`
-	const subbestip = `https://${hostName}/bestip/geo`;
+	const sublink = `https://${hostName}/sub/free?format=clash`
+	const subbestip = `https://${hostName}/bestip/free`;
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
 	// Prepare header string
 	const header = `
 
 <body>
 <center>
-<img src="https://ibb.co.com/jMss44m" style="width: 50%"><br><font color="green"><h1><b>VLESS PROJECT</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
+<img src="tidak ada" style="width: 50%"><br><font color="blue"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
 </body>
 </html> 
 <center>
-<a href='//${hostName}/sub/geo' target='_blank'>BASE64</a>
-<a href='clash://install-config?url=${encodeURIComponent(`https://${hostName}/sub/geo?format=clash`)}}' target='_blank'>Clash for Windows </a>
+<a href='//${hostName}/sub/free' target='_blank'>BASE64</a>
+<a href='clash://install-config?url=${encodeURIComponent(`https://${hostName}/sub/free?format=clash`)}}' target='_blank'>Clash for Windows </a>
 <a href='${clash_link}' target='_blank'>Clash </a>
 <a href='${subbestip}' target='_blank'>Best IP</a>
 <a href='clash://install-config?url=${encodeURIComponent(subbestip)}' target='_blank'>Clash </a>
@@ -759,16 +759,16 @@ ${วเลสSec}
 	// HTML Head with CSS and FontAwesome library
 	const htmlHead = `
   <head>
-	<title>VLES PROJECT</title>
+	<title>UZUMAKI UZAN</title>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<meta property='og:site_name' content='VLESS: วเลส configuration' />
+	<meta property='og:site_name' content='UZUMAKI: วเลส configuration' />
 	<meta property='og:type' content='website' />
-	<meta property='og:title' content='VLESS - Bismillah' />
+	<meta property='og:title' content='UZUMAKI - Bismillah' />
 	<meta property='og:description' content='Use cloudflare pages and worker severless to implement วเลส protocol' />
 	<meta property='og:url' content='https://${hostName}/' />
 	<meta property='og:image' content='https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${encodeURIComponent(`วเลส://${userIDs.split(",")[0]}@${hostName}${commonUrlPart}`)}' />
 	<meta name='twitter:card' content='summary_large_image' />
-	<meta name='twitter:title' content='VLESS - วเลส configuration and subscribe output' />
+	<meta name='twitter:title' content='UZUMAKI - วเลส configuration and subscribe output' />
 	<meta name='twitter:description' content='Use cloudflare pages and worker severless to implement วเลส protocol' />
 	<meta name='twitter:url' content='https://${hostName}/' />
 	<meta property='og:image:width' content='1500' />
