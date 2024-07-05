@@ -859,8 +859,8 @@ function copyToClipboard(text) {
     pre {
         white-space: pre-wrap;
         word-wrap: break-word;
-        background-color: #E0FFFF;
-        border: 1px solid #AFEEEE;
+        background-color: #AFEEEE;
+        border: 1px solid #E0FFFF;
         padding: 15px;
         margin: 10px 0;
     }
