@@ -842,7 +842,7 @@ function copyToClipboard(text) {
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #483D8B;
+        background-color: #f0f0f0;
         color: #333;
         padding: 10px;
     }
@@ -867,8 +867,8 @@ function copyToClipboard(text) {
 
     @media (prefers-color-scheme: dark) {
     body {
-        background-color: #333;
-        color: #f0f0f0;
+        background-color: #483D8B;
+        color: #483D8B;
     }
 
     a {
