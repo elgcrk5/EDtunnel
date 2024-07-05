@@ -859,8 +859,8 @@ function copyToClipboard(text) {
     pre {
         white-space: pre-wrap;
         word-wrap: break-word;
-        background-color: #fff;
-        border: 1px solid #ddd;
+        background-color: #E0FFFF;
+        border: 1px solid #00FFFF;
         padding: 15px;
         margin: 10px 0;
     }
@@ -876,8 +876,8 @@ function copyToClipboard(text) {
     }
 
     pre {
-        background-color: #FFFFE0;
-        border-color: #DDA0DD;
+        background-color: #E6E6FA;
+        border-color: #663399;
     }
     }
     </style>
