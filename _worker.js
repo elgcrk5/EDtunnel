@@ -842,7 +842,7 @@ function copyToClipboard(text) {
     <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
+        background-color: #483D8B;
         color: #333;
         padding: 10px;
     }
