@@ -876,8 +876,8 @@ function copyToClipboard(text) {
     }
 
     pre {
-        background-color: #ffffff;
-        border-color: #21130d;
+        background-color: #FFFFE0;
+        border-color: #DDA0DD;
     }
     }
     </style>
