@@ -709,7 +709,7 @@ function getวเลสConfig(userIDs, hostName) {
 	// Prepare output string for each userID
 	const output = userIDArray.map((userID) => {
 		const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
-		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
 		return `
 <body>
 <pre><center>=====================================
