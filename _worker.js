@@ -5,7 +5,7 @@ import { connect } from 'cloudflare:sockets';
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = '4474cbcc-4f95-453a-8242-2701b89dd64b';
 
-const พร็อกซีไอพีs = ['15.235.167.49'];
+const พร็อกซีไอพีs = ['188.166.255.195'];
 
 // if you want to use ipv6 or single พร็อกซีไอพี, please add comment at this line and remove comment at the next line
 let พร็อกซีไอพี = พร็อกซีไอพีs[Math.floor(Math.random() * พร็อกซีไอพีs.length)];
@@ -716,7 +716,7 @@ function getวเลสConfig(userIDs, hostName) {
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
-» ISP         : OVH SAS
+» ISP         : Digitalocean, LLC
 » User ID     : ${userID}
 » Port TLS    : 443
 » Port NTLS   : 80
@@ -752,7 +752,7 @@ ${วเลสSec}
         <li id="sec">..</li>
       </ul>      
     </div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="#322b2b"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE WORKER VLESS CLOUDFLARE</b> <b style="color: white;font-size: 18px"> ::.</b>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="#322b2b"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">FREE DILARANG MEMPERJUAL BELIKAN !!</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
 </body>
