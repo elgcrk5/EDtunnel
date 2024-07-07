@@ -847,7 +847,7 @@ function copyToClipboard(text) {
         57% { background-color: #00BFFF; }
         71% { background-color: #F0FFF0; }
         85% { background-color: #ADD8E6; }
-        100% { background-color: #D3D3D3; }
+        100% { background-color: #008080; }
     }
 
     @keyframes rainbow-color {
@@ -858,7 +858,7 @@ function copyToClipboard(text) {
         57% { color: #00BFFF; }
         71% { color: #F0FFF0; }
         85% { color: #ADD8E6; }
-        100% { color: #D3D3D3; }
+        100% { color: #008080; }
     }
 
     body {
