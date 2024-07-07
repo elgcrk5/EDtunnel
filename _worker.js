@@ -836,43 +836,21 @@ function copyToClipboard(text) {
 
 	<html>
 <head>
+    <<head>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <style>
-    @keyframes rainbow-background {
-        0%, 14%, 16% { background-color: #00FFFF; }
-        30%, 32% { background-color: #FAEBD7; }
-        46%, 48% { background-color: yellow; }
-        62%, 64% { background-color: #E9967A; }
-        78%, 80% { background-color: #00BFFF; }
-        94%, 96% { background-color: #F0FFF0; }
-        110%, 112% { background-color: #ADD8E6; }
-        126%, 128% { background-color: #00FFFF; }
-    }
-
-    @keyframes rainbow-color {
-        0%, 14%, 16% { color: #00FFFF; }
-        30%, 32% { color: #FAEBD7; }
-        46%, 48% { color: yellow; }
-        62%, 64% { color: #E9967A; }
-        78%, 80% { color: #00BFFF; }
-        94%, 96% { color: #F0FFF0; }
-        110%, 112% { color: #ADD8E6; }
-        126%, 128% { color: #00FFFF; }
-    }
-
     body {
         font-family: Arial, sans-serif;
-        animation: rainbow-background 16s linear infinite;
+        background-color: #f0f0f0;
         color: #333;
         padding: 10px;
     }
 
     a {
+        color: #1a0dab;
         text-decoration: none;
-        animation: rainbow-color 16s linear infinite;
     }
-
     img {
         max-width: 100%;
         height: auto;
@@ -880,27 +858,52 @@ function copyToClipboard(text) {
 
     pre {
         white-space: pre-wrap;
-        word-wrap: break-word;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        padding: 15px;
-        margin: 10px 0;
-        animation: rainbow-background 16s linear infinite;
-    }
+            word-wrap: break-word;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            animation: rainbow 10s infinite;
+            transition: background-color 1s ease;
+        }
 
-    @media (prefers-color-scheme: dark) {
-    body {
-        animation: rainbow-background 16s linear infinite;
-        color: #f0f0f0;
-    }
+        @keyframes rainbow {
+            0% { background-color: #ff0000; }
+            14% { background-color: #ff7f00; }
+            28% { background-color: #ffff00; }
+            42% { background-color: #00ff00; }
+            57% { background-color: #0000ff; }
+            71% { background-color: #4b0082; }
+            85% { background-color: #9400d3; }
+            100% { background-color: #ff0000; }
+        }
 
-    a {
-        animation: rainbow-color 16s linear infinite;
-    }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #333;
+                color: #f0f0f0;
+            }
 
-    pre {
-        animation: rainbow-background 16s linear infinite;
-        border-color: #6272a4;
+            a {
+                color: #9db4ff;
+            }
+
+            pre {
+                border-color: #6272a4;
+                animation: rainbow-dark 10s infinite;
+                transition: background-color 1s ease;
+            }
+        }
+
+        @keyframes rainbow-dark {
+            0% { background-color: #9400d3; }
+            14% { background-color: #4b0082; }
+            28% { background-color: #0000ff; }
+            42% { background-color: #00ff00; }
+            57% { background-color: #ffff00; }
+            71% { background-color: #ff7f00; }
+            85% { background-color: #ff0000; }
+            100% { background-color: #9400d3; }
     }
     }
     </style>
