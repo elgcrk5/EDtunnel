@@ -699,7 +699,7 @@ const ed = 'RUR0dW5uZWw=';
  * @returns {string}
  */
 function getวเลสConfig(userIDs, hostName) {
-	const commonUrlPart = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
+	const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
 	const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
 	const hashSeparator = "##########################";
 
@@ -708,7 +708,7 @@ function getวเลสConfig(userIDs, hostName) {
 
 	// Prepare output string for each userID
 	const output = userIDArray.map((userID) => {
-		const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
+		const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
 		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
 		return `
 <body>
@@ -835,22 +835,44 @@ function copyToClipboard(text) {
 </script>
 
 	<html>
-
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <style>
+    @keyframes rainbow-background {
+        0% { background-color: red; }
+        14% { background-color: orange; }
+        28% { background-color: yellow; }
+        42% { background-color: green; }
+        57% { background-color: blue; }
+        71% { background-color: indigo; }
+        85% { background-color: violet; }
+        100% { background-color: red; }
+    }
+
+    @keyframes rainbow-color {
+        0% { color: red; }
+        14% { color: orange; }
+        28% { color: yellow; }
+        42% { color: green; }
+        57% { color: blue; }
+        71% { color: indigo; }
+        85% { color: violet; }
+        100% { color: red; }
+    }
+
     body {
         font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
+        animation: rainbow-background 10s linear infinite;
         color: #333;
         padding: 10px;
     }
 
     a {
-        color: #1a0dab;
         text-decoration: none;
+        animation: rainbow-color 10s linear infinite;
     }
+
     img {
         max-width: 100%;
         height: auto;
@@ -859,25 +881,27 @@ function copyToClipboard(text) {
     pre {
         white-space: pre-wrap;
         word-wrap: break-word;
-        background-color: #E0FFFF;
-        border: 1px solid #00FFFF;
+        background-color: #fff;
+        border: 1px solid #ddd;
         padding: 15px;
         margin: 10px 0;
+        animation: rainbow-background 10s linear infinite;
     }
 
     @media (prefers-color-scheme: dark) {
     body {
-        background-color: #333;
+        animation: rainbow-background 10s linear infinite;
         color: #f0f0f0;
     }
 
     a {
-        color: #9db4ff;
+        animation: rainbow-color 10s linear infinite;
     }
 
     pre {
-        background-color: #E6E6FA;
-        border-color: #663399;
+        animation: rainbow-background 10s linear infinite;
+        border-color: #6272a4;
+
     }
     }
     </style>
