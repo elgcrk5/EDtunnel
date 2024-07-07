@@ -859,7 +859,7 @@ function copyToClipboard(text) {
     pre {
         white-space: pre-wrap;
             word-wrap: break-word;
-            background: linear-gradient(to bottom, #fff 50%, transparent 50%);
+            background-color: #fff;
             border: 1px solid #ddd;
             padding: 15px;
             margin: 10px 0;
@@ -867,21 +867,20 @@ function copyToClipboard(text) {
             overflow: hidden;
         }
 
-        pre::before {
+        pre::after {
             content: "";
             position: absolute;
-            top: 50%;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 50%;
-            background: linear-gradient(to bottom, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
+            height: 10px; /* Ketinggian bagian bawah yang memiliki efek pelangi */
+            background: linear-gradient(to right, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
             animation: rainbow 10s infinite;
-            transition: background-color 1s ease;
         }
 
         @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 0%; }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -898,15 +897,15 @@ function copyToClipboard(text) {
                 border-color: #B0E0E6;
             }
 
-            pre::before {
-                background: linear-gradient(to bottom, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
+            pre::after {
+                background: linear-gradient(to right, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
                 animation: rainbow-dark 10s infinite;
             }
         }
 
         @keyframes rainbow-dark {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 0%; }
     }
     }
     </style>
