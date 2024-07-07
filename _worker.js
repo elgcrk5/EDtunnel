@@ -5,7 +5,7 @@ import { connect } from 'cloudflare:sockets';
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = '4474cbcc-4f95-453a-8242-2701b89dd64b';
 
-const พร็อกซีไอพีs = ['188.166.255.195'];
+const พร็อกซีไอพีs = ['13.250.131.37'];
 
 // if you want to use ipv6 or single พร็อกซีไอพี, please add comment at this line and remove comment at the next line
 let พร็อกซีไอพี = พร็อกซีไอพีs[Math.floor(Math.random() * พร็อกซีไอพีs.length)];
@@ -716,7 +716,7 @@ function getวเลสConfig(userIDs, hostName) {
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
-» ISP         : Digitalocean, LLC
+» ISP         : SG Amazon.com, Inc.
 » User ID     : ${userID}
 » Port TLS    : 443
 » Port NTLS   : 80
