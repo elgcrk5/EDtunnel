@@ -836,7 +836,7 @@ function copyToClipboard(text) {
 
 	<html>
 <head>
-    <<head>
+    <head>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <style>
@@ -868,14 +868,14 @@ function copyToClipboard(text) {
         }
 
         @keyframes rainbow {
-            0% { background-color: #ff0000; }
-            14% { background-color: #ff7f00; }
-            28% { background-color: #ffff00; }
-            42% { background-color: #00ff00; }
-            57% { background-color: #0000ff; }
-            71% { background-color: #4b0082; }
-            85% { background-color: #9400d3; }
-            100% { background-color: #ff0000; }
+            0% { background-color: #00FFFF; }
+            14% { background-color: #FAEBD7; }
+            28% { background-color: yellow; }
+            42% { background-color: #E9967A; }
+            57% { background-color: #00BFFF; }
+            71% { background-color: #F0FFF0; }
+            85% { background-color: #ADD8E6; }
+            100% { background-color: #00FFFF; }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -896,14 +896,14 @@ function copyToClipboard(text) {
         }
 
         @keyframes rainbow-dark {
-            0% { background-color: #9400d3; }
-            14% { background-color: #4b0082; }
-            28% { background-color: #0000ff; }
-            42% { background-color: #00ff00; }
-            57% { background-color: #ffff00; }
-            71% { background-color: #ff7f00; }
-            85% { background-color: #ff0000; }
-            100% { background-color: #9400d3; }
+            0% { background-color: #00FFFF; }
+            14% { background-color: #FAEBD7; }
+            28% { background-color: yellow; }
+            42% { background-color: #E9967A; }
+            57% { background-color: #00BFFF; }
+            71% { background-color: #F0FFF0; }
+            85% { background-color: #ADD8E6; }
+            100% { background-color: #00FFFF; }
     }
     }
     </style>
