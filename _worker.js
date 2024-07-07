@@ -870,7 +870,7 @@ function copyToClipboard(text) {
         @keyframes rainbow {
             0% { background-color: #00FFFF; }
             14% { background-color: #FAEBD7; }
-            28% { background-color: yellow; }
+            28% { background-color: #FAFAD2; }
             42% { background-color: #E9967A; }
             57% { background-color: #00BFFF; }
             71% { background-color: #F0FFF0; }
@@ -898,7 +898,7 @@ function copyToClipboard(text) {
         @keyframes rainbow-dark {
             0% { background-color: #00FFFF; }
             14% { background-color: #FAEBD7; }
-            28% { background-color: yellow; }
+            28% { background-color: #FAFAD2; }
             42% { background-color: #E9967A; }
             57% { background-color: #00BFFF; }
             71% { background-color: #F0FFF0; }
