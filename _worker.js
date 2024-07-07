@@ -5,7 +5,7 @@ import { connect } from 'cloudflare:sockets';
 // [Windows] Press "Win + R", input cmd and run:  Powershell -NoExit -Command "[guid]::NewGuid()"
 let userID = '4474cbcc-4f95-453a-8242-2701b89dd64b';
 
-const พร็อกซีไอพีs = ['43.153.181.217'];
+const พร็อกซีไอพีs = ['35.219.50.99'];
 
 // if you want to use ipv6 or single พร็อกซีไอพี, please add comment at this line and remove comment at the next line
 let พร็อกซีไอพี = พร็อกซีไอพีs[Math.floor(Math.random() * พร็อกซีไอพีs.length)];
@@ -716,7 +716,7 @@ function getวเลสConfig(userIDs, hostName) {
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
-» ISP         : JP Shenzhen Tencent
+» ISP         : ID Google LLC
 » User ID     : ${userID}
 » Port NTLS    : 80
 » Port TLS   : 443
@@ -724,12 +724,12 @@ function getวเลสConfig(userIDs, hostName) {
 » Network     : (WS)
 » Path        : /vless
 =====================================
-<b>         🇯🇵 VLESS NONE TLS 🇯🇵</b>
+<b>         🇮🇩 VLESS NONE TLS 🇮🇩</b>
 =====================================
 ${วเลสMain}
 <button class="btn btn-primary" onclick="copyToClipboard('${วเลสMain}')">Click to Copy Vless NTLS</button>
 =====================================
-<b>         🇯🇵 VLESS TLS 🇯🇵</b>
+<b>         🇮🇩 VLESS TLS 🇮🇩</b>
 =====================================
 ${วเลสSec}
 <button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless TLS</button>
