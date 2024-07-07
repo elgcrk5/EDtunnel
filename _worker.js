@@ -727,12 +727,12 @@ function getวเลสConfig(userIDs, hostName) {
 <b>           🇸🇬 VLESS TLS 🇸🇬</b>
 =====================================
 ${วเลสMain}
-<button class="btn btn-primary" onclick="copyToClipboard('${วเลสMain}')">Click to Copy Vless TLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless TLS</button>
 =====================================
 <b>         🇸🇬 VLESS NONE TLS 🇸🇬</b>
 =====================================
 ${วเลสSec}
-<button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless NTLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard('${วเลสMain}')">Click to Copy Vless NTLS</button>
 =====================================`;
 	}).join('\n');
 	const sublink = `https://${hostName}/sub/free?format=clash`
