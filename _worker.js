@@ -716,10 +716,10 @@ function getวเลสConfig(userIDs, hostName) {
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
-» ISP         : JP Shenzhen Tencent, Inc.
+» ISP         : JP Shenzhen Tencent
 » User ID     : ${userID}
-» Port TLS    : 443
-» Port NTLS   : 80
+» Port NTLS    : 80
+» Port TLS   : 443
 » Security    : auto
 » Network     : (WS)
 » Path        : /vless
