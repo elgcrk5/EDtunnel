@@ -840,37 +840,37 @@ function copyToClipboard(text) {
 
     <style>
     @keyframes rainbow-background {
-        0%, 100% { background-color: #00FFFF; opacity: 1; }
-        7%, 14% { background-color: #FAEBD7; opacity: 0; }
-        21%, 28% { background-color: yellow; opacity: 1; }
-        35%, 42% { background-color: #E9967A; opacity: 0; }
-        49%, 57% { background-color: #00BFFF; opacity: 1; }
-        64%, 71% { background-color: #F0FFF0; opacity: 0; }
-        78%, 85% { background-color: #ADD8E6; opacity: 1; }
-        92%, 100% { background-color: #00FFFF; opacity: 0; }
+        0%, 14%, 16% { background-color: #00FFFF; }
+        30%, 32% { background-color: #FAEBD7; }
+        46%, 48% { background-color: yellow; }
+        62%, 64% { background-color: #E9967A; }
+        78%, 80% { background-color: #00BFFF; }
+        94%, 96% { background-color: #F0FFF0; }
+        110%, 112% { background-color: #ADD8E6; }
+        126%, 128% { background-color: #00FFFF; }
     }
 
     @keyframes rainbow-color {
-        0%, 100% { color: #00FFFF; opacity: 1; }
-        7%, 14% { color: #FAEBD7; opacity: 0; }
-        21%, 28% { color: yellow; opacity: 1; }
-        35%, 42% { color: #E9967A; opacity: 0; }
-        49%, 57% { color: #00BFFF; opacity: 1; }
-        64%, 71% { color: #F0FFF0; opacity: 0; }
-        78%, 85% { color: #ADD8E6; opacity: 1; }
-        92%, 100% { color: #00FFFF; opacity: 0; }
+        0%, 14%, 16% { color: #00FFFF; }
+        30%, 32% { color: #FAEBD7; }
+        46%, 48% { color: yellow; }
+        62%, 64% { color: #E9967A; }
+        78%, 80% { color: #00BFFF; }
+        94%, 96% { color: #F0FFF0; }
+        110%, 112% { color: #ADD8E6; }
+        126%, 128% { color: #00FFFF; }
     }
 
     body {
         font-family: Arial, sans-serif;
-        animation: rainbow-background 10s linear infinite;
+        animation: rainbow-background 16s linear infinite;
         color: #333;
         padding: 10px;
     }
 
     a {
         text-decoration: none;
-        animation: rainbow-color 10s linear infinite;
+        animation: rainbow-color 16s linear infinite;
     }
 
     img {
@@ -885,21 +885,21 @@ function copyToClipboard(text) {
         border: 1px solid #ddd;
         padding: 15px;
         margin: 10px 0;
-        animation: rainbow-background 10s linear infinite;
+        animation: rainbow-background 16s linear infinite;
     }
 
     @media (prefers-color-scheme: dark) {
     body {
-        animation: rainbow-background 10s linear infinite;
+        animation: rainbow-background 16s linear infinite;
         color: #f0f0f0;
     }
 
     a {
-        animation: rainbow-color 10s linear infinite;
+        animation: rainbow-color 16s linear infinite;
     }
 
     pre {
-        animation: rainbow-background 10s linear infinite;
+        animation: rainbow-background 16s linear infinite;
         border-color: #6272a4;
     }
     }
