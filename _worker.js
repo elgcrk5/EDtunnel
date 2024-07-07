@@ -859,23 +859,29 @@ function copyToClipboard(text) {
     pre {
         white-space: pre-wrap;
             word-wrap: break-word;
-            background-color: #fff;
+            background: linear-gradient(to bottom, #fff 50%, transparent 50%);
             border: 1px solid #ddd;
             padding: 15px;
             margin: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        pre::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
             animation: rainbow 10s infinite;
             transition: background-color 1s ease;
         }
 
         @keyframes rainbow {
-            0% { background-color: #00FFFF; }
-            14% { background-color: #FAEBD7; }
-            28% { background-color: #FAFAD2; }
-            42% { background-color: #E9967A; }
-            57% { background-color: #00BFFF; }
-            71% { background-color: #F0FFF0; }
-            85% { background-color: #ADD8E6; }
-            100% { background-color: #00FFFF; }
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -890,20 +896,17 @@ function copyToClipboard(text) {
 
             pre {
                 border-color: #B0E0E6;
+            }
+
+            pre::before {
+                background: linear-gradient(to bottom, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
                 animation: rainbow-dark 10s infinite;
-                transition: background-color 1s ease;
             }
         }
 
         @keyframes rainbow-dark {
-            0% { background-color: #00FFFF; }
-            14% { background-color: #FAEBD7; }
-            28% { background-color: #FAFAD2; }
-            42% { background-color: #E9967A; }
-            57% { background-color: #00BFFF; }
-            71% { background-color: #F0FFF0; }
-            85% { background-color: #ADD8E6; }
-            100% { background-color: #00FFFF; }
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
     }
     }
     </style>
