@@ -716,7 +716,7 @@ function getวเลสConfig(userIDs, hostName) {
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
-» ISP         : SG Amazon.com, Inc.
+» ISP         : JP Shenzhen Tencent, Inc.
 » User ID     : ${userID}
 » Port TLS    : 443
 » Port NTLS   : 80
@@ -724,15 +724,15 @@ function getวเลสConfig(userIDs, hostName) {
 » Network     : (WS)
 » Path        : /vless
 =====================================
-<b>           🇸🇬 VLESS NONE TLS 🇸🇬</b>
+<b>         🇯🇵 VLESS NONE TLS 🇯🇵</b>
 =====================================
 ${วเลสMain}
-<button class="btn btn-primary" onclick="copyToClipboard('${วเลสMain}')">Click to Copy Vless TLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard('${วเลสMain}')">Click to Copy Vless NTLS</button>
 =====================================
-<b>         🇸🇬 VLESS TLS 🇸🇬</b>
+<b>         🇯🇵 VLESS TLS 🇯🇵</b>
 =====================================
 ${วเลสSec}
-<button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless NTLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless TLS</button>
 =====================================`;
 	}).join('\n');
 	const sublink = `https://${hostName}/sub/free?format=clash`
