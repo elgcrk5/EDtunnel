@@ -752,7 +752,7 @@ ${วเลสSec}
         <li id="sec">..</li>
       </ul>      
     </div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="#322b2b"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Red;font-size:30px">𒆜 -VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN- 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="#322b2b"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: #696969;font-size:30px">𒆜 -VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN- 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
 </body>
@@ -840,25 +840,25 @@ function copyToClipboard(text) {
 
     <style>
     @keyframes rainbow-background {
-        0% { background-color: red; }
-        14% { background-color: orange; }
+        0% { background-color: #00FFFF; }
+        14% { background-color: #FAEBD7; }
         28% { background-color: yellow; }
-        42% { background-color: green; }
-        57% { background-color: blue; }
-        71% { background-color: indigo; }
-        85% { background-color: violet; }
-        100% { background-color: red; }
+        42% { background-color: #E9967A; }
+        57% { background-color: #00BFFF; }
+        71% { background-color: #F0FFF0; }
+        85% { background-color: #ADD8E6; }
+        100% { background-color: #D3D3D3; }
     }
 
     @keyframes rainbow-color {
-        0% { color: red; }
-        14% { color: orange; }
+        0% { color: #00FFFF; }
+        14% { color: #FAEBD7; }
         28% { color: yellow; }
-        42% { color: green; }
-        57% { color: blue; }
-        71% { color: indigo; }
-        85% { color: violet; }
-        100% { color: red; }
+        42% { color: #E9967A; }
+        57% { color: #00BFFF; }
+        71% { color: #F0FFF0; }
+        85% { color: #ADD8E6; }
+        100% { color: #D3D3D3; }
     }
 
     body {
