@@ -708,9 +708,9 @@ function getวเลสConfig(userIDs, hostName) {
 
 	// Prepare output string for each userID
 	const output = userIDArray.map((userID) => {
-		const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
-		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
-		return `
+    const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
+    const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+    return `
 <body>
 <pre><center>=====================================
 <b>VLESS ACCOUNT INFORMATION</b>
@@ -727,12 +727,12 @@ function getวเลสConfig(userIDs, hostName) {
 <b>           🇸🇬 VLESS TLS 🇸🇬</b>
 =====================================
 ${วเลสMain}
- <button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless TLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard('${วเลสMain}')">Click to Copy Vless TLS</button>
 =====================================
 <b>         🇸🇬 VLESS NONE TLS 🇸🇬</b>
 =====================================
 ${วเลสSec}
- <button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless NTLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless NTLS</button>
 =====================================`;
 	}).join('\n');
 	const sublink = `https://${hostName}/sub/free?format=clash`
