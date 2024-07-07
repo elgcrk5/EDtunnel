@@ -840,25 +840,25 @@ function copyToClipboard(text) {
 
     <style>
     @keyframes rainbow-background {
-        0% { background-color: #00FFFF; }
-        14% { background-color: #FAEBD7; }
-        28% { background-color: yellow; }
-        42% { background-color: #E9967A; }
-        57% { background-color: #00BFFF; }
-        71% { background-color: #F0FFF0; }
-        85% { background-color: #ADD8E6; }
-        100% { background-color: #008080; }
+        0%, 100% { background-color: #00FFFF; opacity: 1; }
+        7%, 14% { background-color: #FAEBD7; opacity: 0; }
+        21%, 28% { background-color: yellow; opacity: 1; }
+        35%, 42% { background-color: #E9967A; opacity: 0; }
+        49%, 57% { background-color: #00BFFF; opacity: 1; }
+        64%, 71% { background-color: #F0FFF0; opacity: 0; }
+        78%, 85% { background-color: #ADD8E6; opacity: 1; }
+        92%, 100% { background-color: #00FFFF; opacity: 0; }
     }
 
     @keyframes rainbow-color {
-        0% { color: #00FFFF; }
-        14% { color: #FAEBD7; }
-        28% { color: yellow; }
-        42% { color: #E9967A; }
-        57% { color: #00BFFF; }
-        71% { color: #F0FFF0; }
-        85% { color: #ADD8E6; }
-        100% { color: #008080; }
+        0%, 100% { color: #00FFFF; opacity: 1; }
+        7%, 14% { color: #FAEBD7; opacity: 0; }
+        21%, 28% { color: yellow; opacity: 1; }
+        35%, 42% { color: #E9967A; opacity: 0; }
+        49%, 57% { color: #00BFFF; opacity: 1; }
+        64%, 71% { color: #F0FFF0; opacity: 0; }
+        78%, 85% { color: #ADD8E6; opacity: 1; }
+        92%, 100% { color: #00FFFF; opacity: 0; }
     }
 
     body {
@@ -901,7 +901,6 @@ function copyToClipboard(text) {
     pre {
         animation: rainbow-background 10s linear infinite;
         border-color: #6272a4;
-
     }
     }
     </style>
