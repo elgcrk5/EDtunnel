@@ -752,7 +752,7 @@ ${วเลสSec}
         <li id="sec">..</li>
       </ul>      
     </div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="#322b2b"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: #696969;font-size:30px">𒆜 -VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN- 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 50%"><br><font color="#000000"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: #696969;font-size:30px">𒆜 -VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN- 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
 </body>
@@ -885,11 +885,11 @@ function copyToClipboard(text) {
             }
 
             a {
-                color: #9db4ff;
+                color: #DDA0DD;
             }
 
             pre {
-                border-color: #6272a4;
+                border-color: #B0E0E6;
                 animation: rainbow-dark 10s infinite;
                 transition: background-color 1s ease;
             }
