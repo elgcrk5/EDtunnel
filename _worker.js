@@ -781,12 +781,12 @@ ${proxiesConfig}
 <b>         🇮🇩 VLESS NONE TLS 🇮🇩</b>
 =====================================
 ${วเลสMain}
-<button class="btn btn-primary" onclick="copyToClipboard(\`${vlessMain}\`)">Click to Copy Vless NTLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard(\`${วเลสMain}\`)">Click to Copy Vless NTLS</button>
 =====================================
 <b>         🇮🇩 VLESS TLS 🇮🇩</b>
 =====================================
 ${วเลสSec}
-<button class="btn btn-primary" onclick="copyToClipboard(\`${vlessSec}\`)">Click to Copy Vless TLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard(\`${วเลสSec}\`)">Click to Copy Vless TLS</button>
 =====================================
 <pre>${proxiesConfig}</pre>
 <button class="btn btn-primary" onclick="copyToClipboard(\`${proxiesConfig}\`)">Click to Copy Proxies Config</button>
