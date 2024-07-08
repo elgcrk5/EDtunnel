@@ -698,19 +698,34 @@ const ed = 'RUR0dW5uZWw=';
  * @param {string | null} hostName
  * @returns {string}
  */
-function getวเลสConfig(userIDs, hostName) {
-	const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
-	const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
-	const hashSeparator = "##########################";
+function getVlessConfig(userIDs, hostName) {
+    const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
+    const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
 
-	// Split the userIDs into an array
-	const userIDArray = userIDs.split(",");
+    // Split the userIDs into an array
+    const userIDArray = userIDs.split(",");
 
-	// Prepare output string for each userID
-	const output = userIDArray.map((userID) => {
-    const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
-    const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
-    return `
+    // Prepare output string for each userID
+    const output = userIDArray.map((userID) => {
+        const vlessMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
+        const vlessSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+        const proxiesConfig = `proxies:
+  - name: ${hostName}
+    server: ${hostName}
+    port: 80
+    type: vless
+    uuid: ${userID}
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ${hostName}
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: ${hostName}
+    udp: true`.replace(/\s+/g, ' ').trim();
+        return `
 <body>
 <pre><center>=====================================
 <b>VLESS ACCOUNT INFORMATION</b>
@@ -718,21 +733,24 @@ function getวเลสConfig(userIDs, hostName) {
 » Domain      : ${hostName}
 » ISP         : ID Google LLC
 » User ID     : ${userID}
-» Port NTLS    : 80
-» Port TLS   : 443
+» Port NTLS   : 80
+» Port TLS    : 443
 » Security    : auto
 » Network     : (WS)
 » Path        : /vless
 =====================================
 <b>         🇮🇩 VLESS NONE TLS 🇮🇩</b>
 =====================================
-${วเลสMain}
-<button class="btn btn-primary" onclick="copyToClipboard('${วเลสMain}')">Click to Copy Vless NTLS</button>
+${vlessMain}
+<button class="btn btn-primary" onclick="copyToClipboard('${vlessMain}')">Click to Copy Vless NTLS</button>
 =====================================
 <b>         🇮🇩 VLESS TLS 🇮🇩</b>
 =====================================
-${วเลสSec}
-<button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless TLS</button>
+${vlessSec}
+<button class="btn btn-primary" onclick="copyToClipboard('${vlessSec}')">Click to Copy Vless TLS</button>
+=====================================
+<pre>${proxiesConfig}</pre>
+<button class="btn btn-primary" onclick="copyToClipboard(\`${proxiesConfig}\`)">Click to Copy Proxies Config</button>
 =====================================`;
 	}).join('\n');
 	const sublink = `https://${hostName}/sub/free?format=clash`
