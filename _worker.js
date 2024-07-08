@@ -801,23 +801,95 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
 	// Prepare header string
 	const header = `
 
+<style>
+  /* Menu styling */
+  .menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .menu button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  .menu button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
 <body>
-<center>
-<div id="Date" class="text-center">..., ...-...-...</div>
-      <ul class="list-unstyled d-flex justify-content-center display-4 h2 fw-bold">
-        <li id="hours">..</li>
-        <li id="point">:</li>
-        <li id="min">..</li>
-        <li id="point">:</li>
-        <li id="sec">..</li>
-      </ul>      
-    </div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 30%"><br><font color="Black"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Black;font-size:30px">𒆜 VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b>
-</marquee>
-</center>
+  <center>
+    <div id="Date" class="text-center">..., ...-...-...</div>
+    <ul class="list-unstyled d-flex justify-content-center display-4 h2 fw-bold">
+      <li id="hours">..</li>
+      <li id="point">:</li>
+      <li id="min">..</li>
+      <li id="point">:</li>
+      <li id="sec">..</li>
+    </ul>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 30%">
+    <br>
+    <font color="Black">
+      <h1><b>UZUMAKI UZAN</b></h1>
+    </font>
+    <h3>Jangan Berhenti Berbuat Baik</h3>
+    <p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</i></b></p>
+    <marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Black;font-size:30px">𒆜 VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b></marquee>
+  </center>
+  <div class="menu">
+    <button onclick="showLayout('vlessNTLS')">VLESS NTLS</button>
+    <button onclick="showLayout('vlessTLS')">VLESS TLS</button>
+  </div>
+
+  <div id="vlessNTLS" class="layout" style="display:none;">
+    <h2>VLESS NTLS Layout</h2>
+    <p>Content for VLESS NTLS...</p>
+    <button onclick="hideLayout()">Close</button>
+  </div>
+
+  <div id="vlessTLS" class="layout" style="display:none;">
+    <h2>VLESS TLS Layout</h2>
+    <p>Content for VLESS TLS...</p>
+    <button onclick="hideLayout()">Close</button>
+  </div>
+
+<script>
+  function showLayout(layoutId) {
+    document.getElementById('vlessNTLS').style.display = 'none';
+    document.getElementById('vlessTLS').style.display = 'none';
+    document.getElementById(layoutId).style.display = 'block';
+  }
+
+  function hideLayout() {
+    document.getElementById('vlessNTLS').style.display = 'none';
+    document.getElementById('vlessTLS').style.display = 'none';
+  }
+
+  // Your existing date and time update code
+  function jam() {
+    var namaTahun = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+    var namaHari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
+    var hari_ini = new Date();
+    document.getElementById('Date').innerHTML = (namaHari[hari_ini.getDay()] + ", " + hari_ini.getDate() + '-' + namaTahun[hari_ini.getMonth()] + '-' + hari_ini.getFullYear());
+    var h = hari_ini.getHours();
+    var m = hari_ini.getMinutes();
+    var s = hari_ini.getUTCSeconds();
+    var day = h < 11 ? 'AM' : 'PM';
+    h = h < 10 ? '0' + h : h;
+    m = m < 10 ? '0' + m : m;
+    s = s < 10 ? '0' + s : s;
+    document.getElementById('hours').innerHTML = h;
+    document.getElementById('min').innerHTML = m;
+    document.getElementById('sec').innerHTML = s;
+  }
+  var inter = setInterval(jam, 1000);
+</script>
 </body>
-</html> 
-<center>
+</html>
 <a href='//${hostName}/sub/free' target='_blank'>BASE64</a>
 <a href='clash://install-config?url=${encodeURIComponent(`https://${hostName}/sub/free?format=clash`)}}' target='_blank'>Clash for Windows </a>
 <a href='${clash_link}' target='_blank'>Clash </a>
