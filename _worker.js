@@ -912,17 +912,22 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
   }
 
   function showLayout(layoutId) {
-    document.getElementById('vlessNTLS').style.display = 'none';
-    document.getElementById('vlessTLS').style.display = 'none';
+    // Hide all layouts
+    document.querySelectorAll('.layout').forEach(layout => {
+      layout.style.display = 'none';
+    });
+
+    // Show the selected layout
     document.getElementById(layoutId).style.display = 'block';
     document.getElementById('dropdown').style.display = 'none';
   }
 
   function hideLayout() {
-    document.getElementById('vlessNTLS').style.display = 'none';
-    document.getElementById('vlessTLS').style.display = 'none';
+    document.querySelectorAll('.layout').forEach(layout => {
+      layout.style.display = 'none';
+    });
   }
-
+  
   // Your existing date and time update code
   function jam() {
     var namaTahun = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
