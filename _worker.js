@@ -710,8 +710,8 @@ function getวเลสConfig(userIDs, hostName) {
         const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
         const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
         const proxiesConfig = `proxies:
-  - name: ${hostName}
-    server: ${hostName}
+  - name: VLESS
+    server: bug.com
     port: 80
     type: vless
     uuid: ${userID}
