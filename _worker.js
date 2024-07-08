@@ -698,7 +698,7 @@ const ed = 'RUR0dW5uZWw=';
  * @param {string | null} hostName
  * @returns {string}
  */
-function getVlessConfig(userIDs, hostName) {
+function getวเลสConfig(userIDs, hostName) {
     const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
     const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
 
@@ -707,8 +707,8 @@ function getVlessConfig(userIDs, hostName) {
 
     // Prepare output string for each userID
     const output = userIDArray.map((userID) => {
-        const vlessMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
-        const vlessSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+        const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
+        const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
         const proxiesConfig = `proxies:
   - name: ${hostName}
     server: ${hostName}
@@ -741,12 +741,12 @@ function getVlessConfig(userIDs, hostName) {
 =====================================
 <b>         🇮🇩 VLESS NONE TLS 🇮🇩</b>
 =====================================
-${vlessMain}
+${วเลสMain}
 <button class="btn btn-primary" onclick="copyToClipboard('${vlessMain}')">Click to Copy Vless NTLS</button>
 =====================================
 <b>         🇮🇩 VLESS TLS 🇮🇩</b>
 =====================================
-${vlessSec}
+${วเลสSec}
 <button class="btn btn-primary" onclick="copyToClipboard('${vlessSec}')">Click to Copy Vless TLS</button>
 =====================================
 <pre>${proxiesConfig}</pre>
