@@ -894,6 +894,88 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
     <p>Content for VLESS NTLS...</p>
     <button onclick="hideLayout()">Close</button>
   </div>
+<style>
+  body {
+    text-align: center;
+  }
+  /* Menu styling */
+  .menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .menu button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  .menu button:hover {
+    background-color: #0056b3;
+  }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown button {
+    display: block;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+  }
+  .dropdown button:hover {
+    background-color: #0056b3;
+  }
+  .layout {
+    display: none;
+    text-align: left;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="menu">
+    <button onclick="toggleDropdown()">MENU</button>
+    <div id="dropdown" class="dropdown">
+      <button onclick="showLayout('vlessNTLS')">VLESS NTLS</button>
+      <button onclick="showLayout('vlessTLS')">VLESS TLS</button>
+    </div>
+  </div>
+
+  <center>
+    <div id="Date" class="text-center">..., ...-...-...</div>
+    <ul class="list-unstyled d-flex justify-content-center display-4 h2 fw-bold">
+      <li id="hours">..</li>
+      <li id="point">:</li>
+      <li id="min">..</li>
+      <li id="point">:</li>
+      <li id="sec">..</li>
+    </ul>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 30%">
+    <br>
+    <font color="Black">
+      <h1><b>UZUMAKI UZAN</b></h1>
+    </font>
+    <h3>Jangan Berhenti Berbuat Baik</h3>
+    <p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</i></b></p>
+    <marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Black;font-size:30px">𒆜 VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b></marquee>
+  </center>
+
+  <div id="vlessNTLS" class="layout">
+    <h2>VLESS NTLS Layout</h2>
+    <p>Content for VLESS NTLS...</p>
+    <button onclick="hideLayout()">Close</button>
+  </div>
 
   <div id="vlessTLS" class="layout">
     <h2>VLESS TLS Layout</h2>
@@ -912,20 +994,15 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
   }
 
   function showLayout(layoutId) {
-    // Hide all layouts
-    document.querySelectorAll('.layout').forEach(layout => {
-      layout.style.display = 'none';
-    });
-
-    // Show the selected layout
+    document.getElementById('vlessNTLS').style.display = 'none';
+    document.getElementById('vlessTLS').style.display = 'none';
     document.getElementById(layoutId).style.display = 'block';
     document.getElementById('dropdown').style.display = 'none';
   }
 
   function hideLayout() {
-    document.querySelectorAll('.layout').forEach(layout => {
-      layout.style.display = 'none';
-    });
+    document.getElementById('vlessNTLS').style.display = 'none';
+    document.getElementById('vlessTLS').style.display = 'none';
   }
   
   // Your existing date and time update code
