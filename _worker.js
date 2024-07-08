@@ -709,6 +709,7 @@ function getวเลสConfig(userIDs, hostName) {
     const output = userIDArray.map((userID) => {
         const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
         const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+
         const proxiesConfig = `proxies:
   - name: VLESS
     server: bug.com
@@ -725,6 +726,44 @@ function getวเลสConfig(userIDs, hostName) {
       headers:
         Host: ${hostName}
     udp: true`;
+
+        // Create a data URL for download
+        const configText = `
+=====================================
+VLESS ACCOUNT INFORMATION
+=====================================
+» Domain      : ${hostName}
+» ISP         : ID Google LLC
+» User ID     : ${userID}
+» Port NTLS   : 80
+» Port TLS    : 443
+» Security    : auto
+» Network     : (WS)
+» Path        : /vless
+=====================================
+🇮🇩 VLESS NONE TLS 🇮🇩
+=====================================
+${วเลสMain}
+=====================================
+🇮🇩 VLESS TLS 🇮🇩
+=====================================
+${วเลสSec}
+=====================================
+${proxiesConfig}
+=====================================
+`;
+
+        // Function to copy text to clipboard
+        const copyToClipboard = (text) => {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert('Copied to clipboard!');
+        };
+
         return `
 <body>
 <pre><center>=====================================
@@ -742,16 +781,18 @@ function getวเลสConfig(userIDs, hostName) {
 <b>         🇮🇩 VLESS NONE TLS 🇮🇩</b>
 =====================================
 ${วเลสMain}
-<button class="btn btn-primary" onclick="copyToClipboard('${วเลสMain}')">Click to Copy Vless NTLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard(\`${vlessMain}\`)">Click to Copy Vless NTLS</button>
 =====================================
 <b>         🇮🇩 VLESS TLS 🇮🇩</b>
 =====================================
 ${วเลสSec}
-<button class="btn btn-primary" onclick="copyToClipboard('${วเลสSec}')">Click to Copy Vless TLS</button>
+<button class="btn btn-primary" onclick="copyToClipboard(\`${vlessSec}\`)">Click to Copy Vless TLS</button>
 =====================================
 <pre>${proxiesConfig}</pre>
 <button class="btn btn-primary" onclick="copyToClipboard(\`${proxiesConfig}\`)">Click to Copy Proxies Config</button>
-=====================================`;
+=====================================
+<a href="data:text/plain;charset=utf-8,${encodeURIComponent(configText)}" download="vless_config.txt">Download Config</a>
+`;
 	}).join('\n');
 	const sublink = `https://${hostName}/sub/free?format=clash`
 	const subbestip = `https://${hostName}/bestip/free`;
