@@ -819,6 +819,27 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
   .menu button:hover {
     background-color: #0056b3;
   }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown button {
+    display: block;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+  }
+  .dropdown button:hover {
+    background-color: #0056b3;
+  }
 </style>
 </head>
 <body>
@@ -841,8 +862,11 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
     <marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Black;font-size:30px">𒆜 VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b></marquee>
   </center>
   <div class="menu">
-    <button onclick="showLayout('vlessNTLS')">VLESS NTLS</button>
-    <button onclick="showLayout('vlessTLS')">VLESS TLS</button>
+    <button onclick="toggleDropdown()">MENU</button>
+    <div id="dropdown" class="dropdown">
+      <button onclick="showLayout('vlessNTLS')">VLESS NTLS</button>
+      <button onclick="showLayout('vlessTLS')">VLESS TLS</button>
+    </div>
   </div>
 
   <div id="vlessNTLS" class="layout" style="display:none;">
@@ -858,10 +882,20 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
   </div>
 
 <script>
+  function toggleDropdown() {
+    var dropdown = document.getElementById('dropdown');
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    } else {
+      dropdown.style.display = 'block';
+    }
+  }
+
   function showLayout(layoutId) {
     document.getElementById('vlessNTLS').style.display = 'none';
     document.getElementById('vlessTLS').style.display = 'none';
     document.getElementById(layoutId).style.display = 'block';
+    document.getElementById('dropdown').style.display = 'none';
   }
 
   function hideLayout() {
