@@ -802,6 +802,9 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
 	const header = `
 
 <style>
+  body {
+    text-align: center;
+  }
   /* Menu styling */
   .menu {
     position: absolute;
@@ -840,9 +843,22 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
   .dropdown button:hover {
     background-color: #0056b3;
   }
+  .layout {
+    display: none;
+    text-align: left;
+    padding: 20px;
+  }
 </style>
 </head>
 <body>
+  <div class="menu">
+    <button onclick="toggleDropdown()">MENU</button>
+    <div id="dropdown" class="dropdown">
+      <button onclick="showLayout('vlessNTLS')">VLESS NTLS</button>
+      <button onclick="showLayout('vlessTLS')">VLESS TLS</button>
+    </div>
+  </div>
+
   <center>
     <div id="Date" class="text-center">..., ...-...-...</div>
     <ul class="list-unstyled d-flex justify-content-center display-4 h2 fw-bold">
@@ -861,21 +877,14 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
     <p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</i></b></p>
     <marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Black;font-size:30px">𒆜 VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b></marquee>
   </center>
-  <div class="menu">
-    <button onclick="toggleDropdown()">MENU</button>
-    <div id="dropdown" class="dropdown">
-      <button onclick="showLayout('vlessNTLS')">VLESS NTLS</button>
-      <button onclick="showLayout('vlessTLS')">VLESS TLS</button>
-    </div>
-  </div>
 
-  <div id="vlessNTLS" class="layout" style="display:none;">
+  <div id="vlessNTLS" class="layout">
     <h2>VLESS NTLS Layout</h2>
     <p>Content for VLESS NTLS...</p>
     <button onclick="hideLayout()">Close</button>
   </div>
 
-  <div id="vlessTLS" class="layout" style="display:none;">
+  <div id="vlessTLS" class="layout">
     <h2>VLESS TLS Layout</h2>
     <p>Content for VLESS TLS...</p>
     <button onclick="hideLayout()">Close</button>
