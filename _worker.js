@@ -792,8 +792,7 @@ ${วเลสSec}
 <button class="btn btn-primary" onclick="copyToClipboard(\`${proxiesConfig}\`)">Click to Copy Proxies Config</button>
 =====================================
 <a href="data:text/plain;charset=utf-8,${encodeURIComponent(configText)}" download="vless_config.txt">Download Config</a>
-<br><br>
-Moderator: <a href="http://t.me/eruoone">http://t.me/eruoone</a>
+Moderator: <a href="KLIK DISINI">http://t.me/eruoone</a>
 `;
 	}).join('\n');
 	const sublink = `https://${hostName}/sub/free?format=clash`
