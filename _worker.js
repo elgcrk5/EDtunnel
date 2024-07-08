@@ -724,7 +724,7 @@ function getวเลสConfig(userIDs, hostName) {
       path: /vless
       headers:
         Host: ${hostName}
-    udp: true`.replace(/\s+/g, ' ').trim();
+    udp: true`;
         return `
 <body>
 <pre><center>=====================================
