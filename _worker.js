@@ -706,9 +706,15 @@ function getวเลสConfig(userIDs, hostName) {
     const userIDArray = userIDs.split(",");
 
     // Prepare output string for each userID
-    const output = userIDArray.map((userID) => {
+    const output = await Promise.all(userIDArray.map(async (userID) => {
+        // Fetch ISP info based on IP/domain
+        const response = await fetch(`https://ipinfo.io/${hostName}/json`);
+        const ipInfo = await response.json();
+        const isp = ipInfo.org || 'N/A'; // Default to 'N/A' if ISP info is not available
+
         const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
         const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+
         const proxiesConfig = `proxies:
   - name: VLESS
     server: bug.com
@@ -725,13 +731,14 @@ function getวเลสConfig(userIDs, hostName) {
       headers:
         Host: ${hostName}
     udp: true`;
+
         return `
 <body>
 <pre><center>=====================================
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
-» ISP         : ID Google LLC
+» ISP         : ${isp} 
 » User ID     : ${userID}
 » Port NTLS   : 80
 » Port TLS    : 443
