@@ -803,6 +803,12 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
 
 <style>
   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     text-align: center;
   }
   /* Menu styling */
@@ -848,6 +854,11 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
     text-align: left;
     padding: 20px;
   }
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 </style>
 </head>
 <body>
@@ -859,7 +870,7 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
     </div>
   </div>
 
-  <center>
+  <div class="center-content">
     <div id="Date" class="text-center">..., ...-...-...</div>
     <ul class="list-unstyled d-flex justify-content-center display-4 h2 fw-bold">
       <li id="hours">..</li>
@@ -876,7 +887,7 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>
     <h3>Jangan Berhenti Berbuat Baik</h3>
     <p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</i></b></p>
     <marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Black;font-size:30px">𒆜 VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b></marquee>
-  </center>
+  </div>
 
   <div id="vlessNTLS" class="layout">
     <h2>VLESS NTLS Layout</h2>
