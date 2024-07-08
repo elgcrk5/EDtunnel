@@ -705,17 +705,18 @@ function getวเลสConfig(userIDs, hostName) {
     // Split the userIDs into an array
     const userIDArray = userIDs.split(",");
 
-    // Prepare output string for each userID
-    const output = await Promise.all(userIDArray.map(async (userID) => {
+    try {
         // Fetch ISP info based on IP/domain
         const response = await fetch(`https://ipinfo.io/${hostName}/json`);
         const ipInfo = await response.json();
         const isp = ipInfo.org || 'N/A'; // Default to 'N/A' if ISP info is not available
 
-        const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
-        const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+        // Prepare output string for each userID
+        const output = await Promise.all(userIDArray.map(async (userID) => {
+            const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
+            const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
 
-        const proxiesConfig = `proxies:
+            const proxiesConfig = `proxies:
   - name: VLESS
     server: bug.com
     port: 80
@@ -732,7 +733,7 @@ function getวเลสConfig(userIDs, hostName) {
         Host: ${hostName}
     udp: true`;
 
-        return `
+            return `
 <body>
 <pre><center>=====================================
 <b>VLESS ACCOUNT INFORMATION</b>
@@ -759,7 +760,14 @@ ${วเลสSec}
 <pre>${proxiesConfig}</pre>
 <button class="btn btn-primary" onclick="copyToClipboard(\`${proxiesConfig}\`)">Click to Copy Proxies Config</button>
 =====================================`;
-	}).join('\n');
+        }));
+
+        return output.join('\n');
+    } catch (error) {
+        console.error('Error fetching ISP info:', error);
+        return 'Failed to fetch ISP info';
+    }
+}
 	const sublink = `https://${hostName}/sub/free?format=clash`
 	const subbestip = `https://${hostName}/bestip/free`;
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
