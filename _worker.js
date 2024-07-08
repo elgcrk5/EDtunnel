@@ -752,14 +752,7 @@ ${วเลสSec}
 <pre>${proxiesConfig}</pre>
 <button class="btn btn-primary" onclick="copyToClipboard(\`${proxiesConfig}\`)">Click to Copy Proxies Config</button>
 =====================================`;
-        }));
-
-        return output.join('\n');
-    } catch (error) {
-        console.error('Error fetching ISP info:', error);
-        return 'Failed to fetch ISP info';
-    }
-}
+	}).join('\n');
 	const sublink = `https://${hostName}/sub/free?format=clash`
 	const subbestip = `https://${hostName}/bestip/free`;
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
