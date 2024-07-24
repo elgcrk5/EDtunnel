@@ -795,7 +795,6 @@ ${proxiesConfig}
 =====================================</center>
 » Domain      : ${hostName}
 » ISP         : ${isp}
-» City        : ${city}
 » User ID     : ${userID}
 » Port NTLS   : 80
 » Port TLS    : 443
