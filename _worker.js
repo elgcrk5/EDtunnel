@@ -733,7 +733,7 @@ function getวเลสConfig(userIDs, hostName, isp, proxyIP) {
 
 		const proxiesConfig = `proxies:
   - name: VLESS
-    server: ${proxyIP}
+    server: ${hostName}
     port: 80
     type: vless
     uuid: ${userID}
