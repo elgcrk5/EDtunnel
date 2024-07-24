@@ -732,7 +732,7 @@ function getวเลสConfig(userIDs, hostName, isp, proxyIP) {
 		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
 
 		const proxiesConfig = `proxies:
-  - name: 🧬UZUMAKIUZAN
+  - name: Uzumakiuzanvless
     server: ${hostName}
     port: 80
     type: vless
@@ -762,11 +762,11 @@ VLESS ACCOUNT INFORMATION
 » Network     : (WS)
 » Path        : /vless
 =====================================
-🎟️💈 VLESS NONE TLS 💈🎟️
+💈 •VLESS NONE TLS• 💈
 =====================================
 ${วเลสMain}
 =====================================
-🎟️💈 VLESS TLS 💈🎟️
+💈 •VLESS TLS• 💈
 =====================================
 ${วเลสSec}
 =====================================
@@ -800,12 +800,12 @@ ${proxiesConfig}
 » Network     : (WS)
 » Path        : /vless
 =====================================
-<b>         🎫💈 VLESS NONE TLS 💈🎫</b>
+<b>         💈 VLESS NONE TLS 💈</b>
 =====================================
 ${วเลสMain}
 <button class="btn btn-primary" onclick="copyToClipboard(\`${วเลสMain}\`)">Click to Copy Vless NTLS</button>
 =====================================
-<b>         🎫💈 VLESS TLS 💈🎫</b>
+<b>         💈 VLESS TLS 💈</b>
 =====================================
 ${วเลสSec}
 <button class="btn btn-primary" onclick="copyToClipboard(\`${วเลสSec}\`)">Click to Copy Vless TLS</button>
