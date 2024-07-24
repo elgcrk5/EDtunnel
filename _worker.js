@@ -922,24 +922,38 @@ function copyToClipboard(text) {
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        color: #333;
-        padding: 10px;
-    }
-
-    a {
-        color: #1a0dab;
-        text-decoration: none;
-    }
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    pre {
-        white-space: pre-wrap;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        pre {
+            white-space: pre-wrap;
             word-wrap: break-word;
             background-color: #fff;
             border: 1px solid #ddd;
@@ -948,7 +962,6 @@ function copyToClipboard(text) {
             position: relative;
             overflow: hidden;
         }
-
         pre::after {
             content: "";
             position: absolute;
@@ -959,38 +972,51 @@ function copyToClipboard(text) {
             background: linear-gradient(to right, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
             animation: rainbow 10s infinite;
         }
-
         @keyframes rainbow {
             0% { background-position: 0% 0%; }
             100% { background-position: 100% 0%; }
         }
-
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #333;
                 color: #f0f0f0;
             }
-
             a {
                 color: #DDA0DD;
             }
-
             pre {
                 border-color: #B0E0E6;
             }
-
             pre::after {
                 background: linear-gradient(to right, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
                 animation: rainbow-dark 10s infinite;
             }
         }
-
         @keyframes rainbow-dark {
             0% { background-position: 0% 0%; }
             100% { background-position: 100% 0%; }
-    }
-    }
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+        .dark-mode .btn {
+            background-color: #0056b3;
+        }
+        .dark-mode .btn:hover {
+            background-color: #007bff;
+        }
+        .toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
     </style>
+</head>
+<body>
+    <div class="toggle-mode">🌙</div>
+    <script>
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
