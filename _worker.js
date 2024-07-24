@@ -25,7 +25,9 @@ async function fetchISPAndProxyIP(ip) {
 	const data = await response.json();
 	return {
 		isp: data.isp || 'Unknown ISP',
-		proxyIP: data.proxy_ip || ip
+		proxyIP: data.proxy_ip || ip,
+		country: data.country || 'Unknown Country',
+		city: data.city || 'Unknown City'
 	};
 }
 
@@ -59,8 +61,8 @@ export default {
 						});
 					}
 					case `/vlessfree`: {
-						const { isp, proxyIP } = await fetchISPAndProxyIP(พร็อกซีไอพี);
-						const วเลสConfig = getวเลสConfig(userID, request.headers.get('Host'), isp, proxyIP);
+						const { isp, proxyIP, country, city } = await fetchISPAndProxyIP(พร็อกซีไอพี);
+						const วเลสConfig = getวเลสConfig(userID, request.headers.get('Host'), isp, proxyIP, country, city);
 						return new Response(`${วเลสConfig}`, {
 							status: 200,
 							headers: {
@@ -732,7 +734,7 @@ function getวเลสConfig(userIDs, hostName, isp, proxyIP) {
 		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
 
 		const proxiesConfig = `proxies:
-  - name: Uzumakiuzanvless
+  - name: uzumakiuzanvless
     server: ${hostName}
     port: 80
     type: vless
@@ -755,6 +757,9 @@ VLESS ACCOUNT INFORMATION
 =====================================
 » Domain      : ${hostName}
 » ISP         : ${isp}
+» Proxy IP    : ${proxyIP}
+» Country     : ${country}
+» City        : ${city}
 » User ID     : ${userID}
 » Port NTLS   : 80
 » Port TLS    : 443
@@ -793,6 +798,8 @@ ${proxiesConfig}
 » Domain      : ${hostName}
 » ISP         : ${isp}
 » Proxy IP    : ${proxyIP}
+» Country     : ${country}
+» City        : ${city}
 » User ID     : ${userID}
 » Port NTLS   : 80
 » Port TLS    : 443
