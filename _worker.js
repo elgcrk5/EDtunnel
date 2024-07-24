@@ -816,6 +816,8 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>`;
             document.body.classList.toggle('dark-mode');
             const mode = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
             document.querySelector('.toggle-mode').textContent = mode;
+        });	
+
 	const sublink = `https://${hostName}/sub/free?format=clash`
 	const subbestip = `https://${hostName}/bestip/free`;
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
