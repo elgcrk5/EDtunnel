@@ -720,36 +720,32 @@ const ed = 'RUR0dW5uZWw=';
  * @returns {string}
  */
 function getวเลสConfig(userIDs, hostName, isp, proxyIP) {
-	const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
-	const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
+            const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
+            const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
 
-	// Split the userIDs into an array
-	const userIDArray = userIDs.split(",");
+            const userIDArray = userIDs.split(",");
+            return userIDArray.map((userID) => {
+                const วเลสMain = `vless://${userID}@${hostName}${commonUrlPart}`;
+                const วเลสSec = `vless://${userID}@${hostName}${commonUrlPart1}`;
 
-	// Prepare output string for each userID
-	const output = userIDArray.map((userID) => {
-		const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
-		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+                const proxiesConfig = `proxies:
+- name: VLESS
+  server: ${proxyIP}
+  port: 80
+  type: vless
+  uuid: ${userID}
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  servername: ${hostName}
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: ${hostName}
+  udp: true`;
 
-		const proxiesConfig = `proxies:
-  - name: Uzumakiuzanvless
-    server: ${hostName}
-    port: 80
-    type: vless
-    uuid: ${userID}
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ${hostName}
-    network: ws
-    ws-opts:
-      path: /vless
-      headers:
-        Host: ${hostName}
-    udp: true`;
-
-		// Create a data URL for download
-		const configText = `
+                const configText = `
 =====================================
 VLESS ACCOUNT INFORMATION
 =====================================
@@ -762,11 +758,11 @@ VLESS ACCOUNT INFORMATION
 » Network     : (WS)
 » Path        : /vless
 =====================================
-💈 •VLESS NONE TLS• 💈
+🇮🇩 VLESS NONE TLS 🇮🇩
 =====================================
 ${วเลสMain}
 =====================================
-💈 •VLESS TLS• 💈
+🇮🇩 VLESS TLS 🇮🇩
 =====================================
 ${วเลสSec}
 =====================================
@@ -774,20 +770,8 @@ ${proxiesConfig}
 =====================================
 `;
 
-		// Function to copy text to clipboard
-		const copyToClipboard = (text) => {
-			const el = document.createElement('textarea');
-			el.value = text;
-			document.body.appendChild(el);
-			el.select();
-			document.execCommand('copy');
-			document.body.removeChild(el);
-			alert('Copied to clipboard!');
-		};
-
-		return `
-<body style="background-color: #696969;">
-<pre><center>=====================================
+                return `
+<center>=====================================
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
@@ -800,12 +784,12 @@ ${proxiesConfig}
 » Network     : (WS)
 » Path        : /vless
 =====================================
-<b>         💈 VLESS NONE TLS 💈</b>
+<b>         🇮🇩 VLESS NONE TLS 🇮🇩</b>
 =====================================
 ${วเลสMain}
 <button class="btn btn-primary" onclick="copyToClipboard(\`${วเลสMain}\`)">Click to Copy Vless NTLS</button>
 =====================================
-<b>         💈 VLESS TLS 💈</b>
+<b>         🇮🇩 VLESS TLS 🇮🇩</b>
 =====================================
 ${วเลสSec}
 <button class="btn btn-primary" onclick="copyToClipboard(\`${วเลสSec}\`)">Click to Copy Vless TLS</button>
@@ -814,9 +798,24 @@ ${วเลสSec}
 <button class="btn btn-primary" onclick="copyToClipboard(\`${proxiesConfig}\`)">Click to Copy Proxies Config</button>
 =====================================
 <a href="data:text/plain;charset=utf-8,${encodeURIComponent(configText)}" download="vless_config.txt">Download Config</a>
-🤖: <a href="http://t.me/eruoone">©Uzumaki uzan</a>
-`;
-	}).join('\n');
+Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>`;
+            }).join("<br><br>");
+        }
+
+        function copyToClipboard(text) {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert('Copied to clipboard!');
+        }
+
+        document.querySelector('.toggle-mode').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const mode = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+            document.querySelector('.toggle-mode').textContent = mode;
 	const sublink = `https://${hostName}/sub/free?format=clash`
 	const subbestip = `https://${hostName}/bestip/free`;
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
