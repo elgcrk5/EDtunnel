@@ -1,4 +1,4 @@
-// @ts-ignore
+/ @ts-ignore
 import { connect } from 'cloudflare:sockets';
 
 // How to generate your own UUID:
@@ -720,32 +720,36 @@ const ed = 'RUR0dW5uZWw=';
  * @returns {string}
  */
 function getวเลสConfig(userIDs, hostName, isp, proxyIP) {
-            const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
-            const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
+	const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
+	const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
 
-            const userIDArray = userIDs.split(",");
-            return userIDArray.map((userID) => {
-                const วเลสMain = `vless://${userID}@${hostName}${commonUrlPart}`;
-                const วเลสSec = `vless://${userID}@${hostName}${commonUrlPart1}`;
+	// Split the userIDs into an array
+	const userIDArray = userIDs.split(",");
 
-                const proxiesConfig = `proxies:
-- name: VLESS
-  server: ${proxyIP}
-  port: 80
-  type: vless
-  uuid: ${userID}
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  servername: ${hostName}
-  network: ws
-  ws-opts:
-    path: /vless
-    headers:
-      Host: ${hostName}
-  udp: true`;
+	// Prepare output string for each userID
+	const output = userIDArray.map((userID) => {
+		const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
+		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
 
-                const configText = `
+		const proxiesConfig = `proxies:
+  - name: Uzumakiuzanvless
+    server: ${hostName}
+    port: 80
+    type: vless
+    uuid: ${userID}
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ${hostName}
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: ${hostName}
+    udp: true`;
+
+		// Create a data URL for download
+		const configText = `
 =====================================
 VLESS ACCOUNT INFORMATION
 =====================================
@@ -758,11 +762,11 @@ VLESS ACCOUNT INFORMATION
 » Network     : (WS)
 » Path        : /vless
 =====================================
-🇮🇩 VLESS NONE TLS 🇮🇩
+📢 VLESS NONE TLS 📢
 =====================================
 ${วเลสMain}
 =====================================
-🇮🇩 VLESS TLS 🇮🇩
+📢 VLESS TLS 📢
 =====================================
 ${วเลสSec}
 =====================================
@@ -770,8 +774,20 @@ ${proxiesConfig}
 =====================================
 `;
 
-                return `
-<center>=====================================
+		// Function to copy text to clipboard
+		const copyToClipboard = (text) => {
+			const el = document.createElement('textarea');
+			el.value = text;
+			document.body.appendChild(el);
+			el.select();
+			document.execCommand('copy');
+			document.body.removeChild(el);
+			alert('Copied to clipboard!');
+		};
+
+		return `
+<body style="background-color: #696969;">
+<pre><center>=====================================
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
@@ -784,12 +800,12 @@ ${proxiesConfig}
 » Network     : (WS)
 » Path        : /vless
 =====================================
-<b>         🇮🇩 VLESS NONE TLS 🇮🇩</b>
+<b>         📢 VLESS NONE TLS 📢</b>
 =====================================
 ${วเลสMain}
 <button class="btn btn-primary" onclick="copyToClipboard(\`${วเลสMain}\`)">Click to Copy Vless NTLS</button>
 =====================================
-<b>         🇮🇩 VLESS TLS 🇮🇩</b>
+<b>         📢 VLESS TLS 📢</b>
 =====================================
 ${วเลสSec}
 <button class="btn btn-primary" onclick="copyToClipboard(\`${วเลสSec}\`)">Click to Copy Vless TLS</button>
@@ -797,27 +813,10 @@ ${วเลสSec}
 <pre>${proxiesConfig}</pre>
 <button class="btn btn-primary" onclick="copyToClipboard(\`${proxiesConfig}\`)">Click to Copy Proxies Config</button>
 =====================================
-<a href="data:text/plain;charset=utf-8,${encodeURIComponent(configText)}" download="vless_config.txt">Download Config</a>
-Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>`;
-            }).join("<br><br>");
-        }
-
-        function copyToClipboard(text) {
-            const el = document.createElement('textarea');
-            el.value = text;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert('Copied to clipboard!');
-        }
-
-        document.querySelector('.toggle-mode').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const mode = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-            document.querySelector('.toggle-mode').textContent = mode;
-        });	
-
+<a href="data:text/plain;charset=utf-8,${encodeURIComponent(configText)}" download="vless_config.txt">📂Download config file</a>
+🤖: <a href="http://t.me/eruoone">©Uzumaki uzan</a>
+`;
+	}).join('\n');
 	const sublink = `https://${hostName}/sub/free?format=clash`
 	const subbestip = `https://${hostName}/bestip/free`;
 	const clash_link = `https://api.v1.mk/sub?target=clash&url=${encodeURIComponent(sublink)}&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true`;
@@ -835,7 +834,7 @@ Moderator: <a href="http://t.me/eruoone">KLIK DISINI</a>`;
         <li id="sec">..</li>
       </ul>      
     </div>
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 30%"><br><font color="Black"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Black;font-size:30px">𒆜 VLESS LIFETIME FREE DILARANG MEMPERJUAL BELIKAN 𒆜</b> <b style="color: white;font-size: 18px"> ::.</b>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Seal_of_the_City_of_Surakarta.svg" style="width: 30%"><br><font color="Black"><h1><b>UZUMAKI UZAN</br></br></b></h1></font><h3>Jangan Berhenti Berbuat Baik</h3><p class="kata1"><b><i>Harimau mati meninggalkan belang, gajah mati meninggalkan gading, orang mati meninggalkan nama...</b></i></p><p class="kata2"></p><p class="kata3"></p><marquee><b style="color: white;font-size: 18px">.:: </b> <b style="color: Black;font-size:30px">🪐 UZUMAKI UZAN 🪐</b> <b style="color: white;font-size: 18px"> ::.</b>
 </marquee>
 </center>
 </body>
@@ -923,38 +922,24 @@ function copyToClipboard(text) {
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            padding: 10px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 0;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        a {
-            color: #1a0dab;
-            text-decoration: none;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        pre {
-            white-space: pre-wrap;
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        padding: 10px;
+    }
+
+    a {
+        color: #1a0dab;
+        text-decoration: none;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    pre {
+        white-space: pre-wrap;
             word-wrap: break-word;
             background-color: #fff;
             border: 1px solid #ddd;
@@ -963,6 +948,7 @@ function copyToClipboard(text) {
             position: relative;
             overflow: hidden;
         }
+
         pre::after {
             content: "";
             position: absolute;
@@ -973,51 +959,38 @@ function copyToClipboard(text) {
             background: linear-gradient(to right, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
             animation: rainbow 10s infinite;
         }
+
         @keyframes rainbow {
             0% { background-position: 0% 0%; }
             100% { background-position: 100% 0%; }
         }
+
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #333;
                 color: #f0f0f0;
             }
+
             a {
                 color: #DDA0DD;
             }
+
             pre {
                 border-color: #B0E0E6;
             }
+
             pre::after {
                 background: linear-gradient(to right, #00FFFF, #FAEBD7, #FAFAD2, #E9967A, #00BFFF, #F0FFF0, #ADD8E6, #00FFFF);
                 animation: rainbow-dark 10s infinite;
             }
         }
+
         @keyframes rainbow-dark {
             0% { background-position: 0% 0%; }
             100% { background-position: 100% 0%; }
-        }
-        .dark-mode {
-            background-color: #333;
-            color: #f0f0f0;
-        }
-        .dark-mode .btn {
-            background-color: #0056b3;
-        }
-        .dark-mode .btn:hover {
-            background-color: #007bff;
-        }
-        .toggle-mode {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-        }
+    }
+    }
     </style>
-</head>
-<body>
-    <div class="toggle-mode">🌙</div>
-    <script>
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -1101,3 +1074,4 @@ function สร้างวเลสSub(ไอดีผู้ใช้_เส้
 const cn_hostnames = [
 	't.me/eruoone',
 	];
+	
