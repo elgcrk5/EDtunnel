@@ -757,9 +757,6 @@ VLESS ACCOUNT INFORMATION
 =====================================
 » Domain      : ${hostName}
 » ISP         : ${isp}
-» Proxy IP    : ${proxyIP}
-» Country     : ${country}
-» City        : ${city}
 » User ID     : ${userID}
 » Port NTLS   : 80
 » Port TLS    : 443
