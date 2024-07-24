@@ -786,7 +786,7 @@ ${proxiesConfig}
 		};
 
 		return `
-<body>
+<body style="background-color: #696969;">
 <pre><center>=====================================
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
