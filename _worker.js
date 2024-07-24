@@ -20,6 +20,15 @@ if (!isValidUUID(userID)) {
 	throw new Error('uuid is invalid');
 }
 
+async function fetchISPAndProxyIP(ip) {
+	const response = await fetch(`https://uzumaki.mahal.filegear-sg.me/?ip=${ip}`);
+	const data = await response.json();
+	return {
+		isp: data.isp || 'Unknown ISP',
+		proxyIP: data.proxy_ip || ip
+	};
+}
+
 export default {
 	/**
 	 * @param {import("@cloudflare/workers-types").Request} request
@@ -50,8 +59,20 @@ export default {
 						});
 					}
 					case `/vlessfree`: {
-						const วเลสConfig = getวเลสConfig(userID, request.headers.get('Host'));
+						const { isp, proxyIP } = await fetchISPAndProxyIP(พร็อกซีไอพี);
+						const วเลสConfig = getวเลสConfig(userID, request.headers.get('Host'), isp, proxyIP);
 						return new Response(`${วเลสConfig}`, {
+							status: 200,
+							headers: {
+								"Content-Type": "text/html; charset=utf-8",
+							}
+						});
+					};
+					case `/sub/geo`: {
+						const url = new URL(request.url);
+						const searchParams = url.searchParams;
+						const วเลสSubConfig = สร้างวเลสSub(userID, request.headers.get('Host'));
+						return new Response(`${วเลสSubConfig}`, {
 							status: 200,
 							headers: {
 								"Content-Type": "text/html; charset=utf-8",
@@ -698,21 +719,21 @@ const ed = 'RUR0dW5uZWw=';
  * @param {string | null} hostName
  * @returns {string}
  */
-function getวเลสConfig(userIDs, hostName) {
-    const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
-    const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
+function getวเลสConfig(userIDs, hostName, isp, proxyIP) {
+	const commonUrlPart1 = `:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTPS`;
+	const commonUrlPart = `:80?encryption=none&security=none&fp=randomized&type=ws&host=${hostName}&path=%2Fvless#VLESS-HTTP`;
 
-    // Split the userIDs into an array
-    const userIDArray = userIDs.split(",");
+	// Split the userIDs into an array
+	const userIDArray = userIDs.split(",");
 
-    // Prepare output string for each userID
-    const output = userIDArray.map((userID) => {
-        const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
-        const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
+	// Prepare output string for each userID
+	const output = userIDArray.map((userID) => {
+		const วเลสMain = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart;
+		const วเลสSec = atob(pt) + '://' + userID + atob(at) + hostName + commonUrlPart1;
 
-        const proxiesConfig = `proxies:
+		const proxiesConfig = `proxies:
   - name: VLESS
-    server: bug.com
+    server: ${proxyIP}
     port: 80
     type: vless
     uuid: ${userID}
@@ -727,13 +748,13 @@ function getวเลสConfig(userIDs, hostName) {
         Host: ${hostName}
     udp: true`;
 
-        // Create a data URL for download
-        const configText = `
+		// Create a data URL for download
+		const configText = `
 =====================================
 VLESS ACCOUNT INFORMATION
 =====================================
 » Domain      : ${hostName}
-» ISP         : ID Google LLC
+» ISP         : ${isp}
 » User ID     : ${userID}
 » Port NTLS   : 80
 » Port TLS    : 443
@@ -753,24 +774,25 @@ ${proxiesConfig}
 =====================================
 `;
 
-        // Function to copy text to clipboard
-        const copyToClipboard = (text) => {
-            const el = document.createElement('textarea');
-            el.value = text;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            alert('Copied to clipboard!');
-        };
+		// Function to copy text to clipboard
+		const copyToClipboard = (text) => {
+			const el = document.createElement('textarea');
+			el.value = text;
+			document.body.appendChild(el);
+			el.select();
+			document.execCommand('copy');
+			document.body.removeChild(el);
+			alert('Copied to clipboard!');
+		};
 
-        return `
+		return `
 <body>
 <pre><center>=====================================
 <b>VLESS ACCOUNT INFORMATION</b>
 =====================================</center>
 » Domain      : ${hostName}
-» ISP         : ID Google LLC
+» ISP         : ${isp}
+» Proxy IP    : ${proxyIP}
 » User ID     : ${userID}
 » Port NTLS   : 80
 » Port TLS    : 443
